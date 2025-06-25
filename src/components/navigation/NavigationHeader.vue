@@ -103,10 +103,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 import { useTheme } from '../../composables/useTheme'
 
-const router = useRouter()
 const { isDark, toggleTheme } = useTheme()
 
 const mobileMenuOpen = ref(false)

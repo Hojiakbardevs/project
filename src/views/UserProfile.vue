@@ -225,7 +225,7 @@ const loadUser = async () => {
 const loadUserPosts = async (userId: number) => {
   try {
     loadingPosts.value = true
-    userPosts.value = (await userService.getUserPosts(userId)).data
+    userPosts.value = await userService.getUserPosts(userId)
   } catch (err) {
     console.error('Error loading user posts:', err)
   } finally {
@@ -236,7 +236,7 @@ const loadUserPosts = async (userId: number) => {
 const loadUserTodos = async (userId: number) => {
   try {
     loadingTodos.value = true
-    userTodos.value = (await userService.getUserTodos(userId)).data
+    userTodos.value = await userService.getUserTodos(userId)
   } catch (err) {
     console.error('Error loading user todos:', err)
   } finally {
@@ -247,7 +247,7 @@ const loadUserTodos = async (userId: number) => {
 const loadUserAlbums = async (userId: number) => {
   try {
     loadingAlbums.value = true
-    userAlbums.value = (await userService.getUserAlbums(userId)).data
+    userAlbums.value = await userService.getUserAlbums(userId)
   } catch (err) {
     console.error('Error loading user albums:', err)
   } finally {
